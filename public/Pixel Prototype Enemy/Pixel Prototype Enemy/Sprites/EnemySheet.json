@@ -1,0 +1,1779 @@
+{ "frames": {
+   "Enemy 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 1.aseprite": {
+    "frame": { "x": 96, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 2.aseprite": {
+    "frame": { "x": 192, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 3.aseprite": {
+    "frame": { "x": 288, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 4.aseprite": {
+    "frame": { "x": 384, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 5.aseprite": {
+    "frame": { "x": 480, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 6.aseprite": {
+    "frame": { "x": 576, "y": 0, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 7.aseprite": {
+    "frame": { "x": 0, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 8.aseprite": {
+    "frame": { "x": 96, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 9.aseprite": {
+    "frame": { "x": 192, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 10.aseprite": {
+    "frame": { "x": 288, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 11.aseprite": {
+    "frame": { "x": 384, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 12.aseprite": {
+    "frame": { "x": 480, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 13.aseprite": {
+    "frame": { "x": 576, "y": 84, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 14.aseprite": {
+    "frame": { "x": 0, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 15.aseprite": {
+    "frame": { "x": 96, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 16.aseprite": {
+    "frame": { "x": 192, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 17.aseprite": {
+    "frame": { "x": 288, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 18.aseprite": {
+    "frame": { "x": 384, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 19.aseprite": {
+    "frame": { "x": 480, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 20.aseprite": {
+    "frame": { "x": 576, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 21.aseprite": {
+    "frame": { "x": 672, "y": 168, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 22.aseprite": {
+    "frame": { "x": 0, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 23.aseprite": {
+    "frame": { "x": 96, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 24.aseprite": {
+    "frame": { "x": 192, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 25.aseprite": {
+    "frame": { "x": 288, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 26.aseprite": {
+    "frame": { "x": 384, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 27.aseprite": {
+    "frame": { "x": 480, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 28.aseprite": {
+    "frame": { "x": 576, "y": 252, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 29.aseprite": {
+    "frame": { "x": 0, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 30.aseprite": {
+    "frame": { "x": 96, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 31.aseprite": {
+    "frame": { "x": 192, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 32.aseprite": {
+    "frame": { "x": 288, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 33.aseprite": {
+    "frame": { "x": 384, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 34.aseprite": {
+    "frame": { "x": 480, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 35.aseprite": {
+    "frame": { "x": 576, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 36.aseprite": {
+    "frame": { "x": 672, "y": 336, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 37.aseprite": {
+    "frame": { "x": 0, "y": 420, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 38.aseprite": {
+    "frame": { "x": 96, "y": 420, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 39.aseprite": {
+    "frame": { "x": 192, "y": 420, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 40.aseprite": {
+    "frame": { "x": 288, "y": 420, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 41.aseprite": {
+    "frame": { "x": 384, "y": 420, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 42.aseprite": {
+    "frame": { "x": 480, "y": 420, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 43.aseprite": {
+    "frame": { "x": 0, "y": 504, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 44.aseprite": {
+    "frame": { "x": 0, "y": 588, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 45.aseprite": {
+    "frame": { "x": 96, "y": 588, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 46.aseprite": {
+    "frame": { "x": 192, "y": 588, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 47.aseprite": {
+    "frame": { "x": 288, "y": 588, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 48.aseprite": {
+    "frame": { "x": 384, "y": 588, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 49.aseprite": {
+    "frame": { "x": 480, "y": 588, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 50.aseprite": {
+    "frame": { "x": 0, "y": 672, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 51.aseprite": {
+    "frame": { "x": 0, "y": 756, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 52.aseprite": {
+    "frame": { "x": 96, "y": 756, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 53.aseprite": {
+    "frame": { "x": 192, "y": 756, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 54.aseprite": {
+    "frame": { "x": 288, "y": 756, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 55.aseprite": {
+    "frame": { "x": 384, "y": 756, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 56.aseprite": {
+    "frame": { "x": 480, "y": 756, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 57.aseprite": {
+    "frame": { "x": 0, "y": 840, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 58.aseprite": {
+    "frame": { "x": 96, "y": 840, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 59.aseprite": {
+    "frame": { "x": 192, "y": 840, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 60.aseprite": {
+    "frame": { "x": 0, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 61.aseprite": {
+    "frame": { "x": 96, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 62.aseprite": {
+    "frame": { "x": 192, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 63.aseprite": {
+    "frame": { "x": 288, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 64.aseprite": {
+    "frame": { "x": 384, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 65.aseprite": {
+    "frame": { "x": 480, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 66.aseprite": {
+    "frame": { "x": 576, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 67.aseprite": {
+    "frame": { "x": 672, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 68.aseprite": {
+    "frame": { "x": 768, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 69.aseprite": {
+    "frame": { "x": 864, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 70.aseprite": {
+    "frame": { "x": 960, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 71.aseprite": {
+    "frame": { "x": 1056, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 72.aseprite": {
+    "frame": { "x": 1152, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 73.aseprite": {
+    "frame": { "x": 1248, "y": 924, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 74.aseprite": {
+    "frame": { "x": 0, "y": 1008, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 200
+   },
+   "Enemy 75.aseprite": {
+    "frame": { "x": 0, "y": 1092, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 200
+   },
+   "Enemy 76.aseprite": {
+    "frame": { "x": 96, "y": 1092, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 77.aseprite": {
+    "frame": { "x": 192, "y": 1092, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 78.aseprite": {
+    "frame": { "x": 288, "y": 1092, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 79.aseprite": {
+    "frame": { "x": 0, "y": 1176, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 80.aseprite": {
+    "frame": { "x": 96, "y": 1176, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 81.aseprite": {
+    "frame": { "x": 192, "y": 1176, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 82.aseprite": {
+    "frame": { "x": 288, "y": 1176, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 83.aseprite": {
+    "frame": { "x": 0, "y": 1260, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 84.aseprite": {
+    "frame": { "x": 96, "y": 1260, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 85.aseprite": {
+    "frame": { "x": 192, "y": 1260, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 86.aseprite": {
+    "frame": { "x": 288, "y": 1260, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 87.aseprite": {
+    "frame": { "x": 0, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 88.aseprite": {
+    "frame": { "x": 96, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 89.aseprite": {
+    "frame": { "x": 192, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 90.aseprite": {
+    "frame": { "x": 288, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 91.aseprite": {
+    "frame": { "x": 384, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 92.aseprite": {
+    "frame": { "x": 480, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 93.aseprite": {
+    "frame": { "x": 576, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 94.aseprite": {
+    "frame": { "x": 672, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 95.aseprite": {
+    "frame": { "x": 768, "y": 1344, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 96.aseprite": {
+    "frame": { "x": 0, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 97.aseprite": {
+    "frame": { "x": 96, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 98.aseprite": {
+    "frame": { "x": 192, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 99.aseprite": {
+    "frame": { "x": 288, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 100.aseprite": {
+    "frame": { "x": 384, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 101.aseprite": {
+    "frame": { "x": 480, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 102.aseprite": {
+    "frame": { "x": 576, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 103.aseprite": {
+    "frame": { "x": 672, "y": 1428, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 104.aseprite": {
+    "frame": { "x": 0, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 105.aseprite": {
+    "frame": { "x": 96, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 106.aseprite": {
+    "frame": { "x": 192, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 107.aseprite": {
+    "frame": { "x": 288, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 108.aseprite": {
+    "frame": { "x": 384, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 109.aseprite": {
+    "frame": { "x": 480, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 110.aseprite": {
+    "frame": { "x": 576, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 111.aseprite": {
+    "frame": { "x": 672, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 112.aseprite": {
+    "frame": { "x": 768, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 113.aseprite": {
+    "frame": { "x": 864, "y": 1512, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 114.aseprite": {
+    "frame": { "x": 0, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 115.aseprite": {
+    "frame": { "x": 96, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 116.aseprite": {
+    "frame": { "x": 192, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 117.aseprite": {
+    "frame": { "x": 288, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 118.aseprite": {
+    "frame": { "x": 384, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 119.aseprite": {
+    "frame": { "x": 480, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 120.aseprite": {
+    "frame": { "x": 576, "y": 1596, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 1000
+   },
+   "Enemy 121.aseprite": {
+    "frame": { "x": 0, "y": 1680, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 122.aseprite": {
+    "frame": { "x": 96, "y": 1680, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 123.aseprite": {
+    "frame": { "x": 192, "y": 1680, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 124.aseprite": {
+    "frame": { "x": 288, "y": 1680, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 125.aseprite": {
+    "frame": { "x": 384, "y": 1680, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 126.aseprite": {
+    "frame": { "x": 480, "y": 1680, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 127.aseprite": {
+    "frame": { "x": 0, "y": 1764, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 128.aseprite": {
+    "frame": { "x": 96, "y": 1764, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 129.aseprite": {
+    "frame": { "x": 192, "y": 1764, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 130.aseprite": {
+    "frame": { "x": 288, "y": 1764, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 131.aseprite": {
+    "frame": { "x": 384, "y": 1764, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 132.aseprite": {
+    "frame": { "x": 480, "y": 1764, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 133.aseprite": {
+    "frame": { "x": 0, "y": 1848, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 134.aseprite": {
+    "frame": { "x": 96, "y": 1848, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 135.aseprite": {
+    "frame": { "x": 192, "y": 1848, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 136.aseprite": {
+    "frame": { "x": 288, "y": 1848, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 137.aseprite": {
+    "frame": { "x": 384, "y": 1848, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 138.aseprite": {
+    "frame": { "x": 0, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 139.aseprite": {
+    "frame": { "x": 96, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 140.aseprite": {
+    "frame": { "x": 192, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 141.aseprite": {
+    "frame": { "x": 288, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 142.aseprite": {
+    "frame": { "x": 384, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 143.aseprite": {
+    "frame": { "x": 480, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 144.aseprite": {
+    "frame": { "x": 576, "y": 1932, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 145.aseprite": {
+    "frame": { "x": 0, "y": 2016, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 146.aseprite": {
+    "frame": { "x": 96, "y": 2016, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 147.aseprite": {
+    "frame": { "x": 192, "y": 2016, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 148.aseprite": {
+    "frame": { "x": 288, "y": 2016, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 149.aseprite": {
+    "frame": { "x": 384, "y": 2016, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 150.aseprite": {
+    "frame": { "x": 0, "y": 2100, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 151.aseprite": {
+    "frame": { "x": 96, "y": 2100, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 152.aseprite": {
+    "frame": { "x": 192, "y": 2100, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 153.aseprite": {
+    "frame": { "x": 288, "y": 2100, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 154.aseprite": {
+    "frame": { "x": 384, "y": 2100, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 155.aseprite": {
+    "frame": { "x": 480, "y": 2100, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 156.aseprite": {
+    "frame": { "x": 0, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 157.aseprite": {
+    "frame": { "x": 96, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 158.aseprite": {
+    "frame": { "x": 192, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 159.aseprite": {
+    "frame": { "x": 288, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 160.aseprite": {
+    "frame": { "x": 384, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 161.aseprite": {
+    "frame": { "x": 480, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 162.aseprite": {
+    "frame": { "x": 576, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 163.aseprite": {
+    "frame": { "x": 672, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 164.aseprite": {
+    "frame": { "x": 768, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 165.aseprite": {
+    "frame": { "x": 864, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 166.aseprite": {
+    "frame": { "x": 960, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 167.aseprite": {
+    "frame": { "x": 1056, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 168.aseprite": {
+    "frame": { "x": 1152, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 169.aseprite": {
+    "frame": { "x": 1248, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 170.aseprite": {
+    "frame": { "x": 1344, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 171.aseprite": {
+    "frame": { "x": 1440, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 172.aseprite": {
+    "frame": { "x": 1536, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 173.aseprite": {
+    "frame": { "x": 1632, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 174.aseprite": {
+    "frame": { "x": 1728, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 175.aseprite": {
+    "frame": { "x": 1824, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 176.aseprite": {
+    "frame": { "x": 1920, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 177.aseprite": {
+    "frame": { "x": 2016, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 178.aseprite": {
+    "frame": { "x": 2112, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 179.aseprite": {
+    "frame": { "x": 2208, "y": 2184, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 180.aseprite": {
+    "frame": { "x": 0, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 181.aseprite": {
+    "frame": { "x": 96, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 182.aseprite": {
+    "frame": { "x": 192, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 183.aseprite": {
+    "frame": { "x": 288, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 184.aseprite": {
+    "frame": { "x": 384, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 100
+   },
+   "Enemy 185.aseprite": {
+    "frame": { "x": 480, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 186.aseprite": {
+    "frame": { "x": 576, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 187.aseprite": {
+    "frame": { "x": 672, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 188.aseprite": {
+    "frame": { "x": 768, "y": 2268, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 240
+   },
+   "Enemy 189.aseprite": {
+    "frame": { "x": 0, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 190.aseprite": {
+    "frame": { "x": 96, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 191.aseprite": {
+    "frame": { "x": 192, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 192.aseprite": {
+    "frame": { "x": 288, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 193.aseprite": {
+    "frame": { "x": 384, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 194.aseprite": {
+    "frame": { "x": 480, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 1000
+   },
+   "Enemy 195.aseprite": {
+    "frame": { "x": 576, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 196.aseprite": {
+    "frame": { "x": 672, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 197.aseprite": {
+    "frame": { "x": 768, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 198.aseprite": {
+    "frame": { "x": 864, "y": 2352, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 140
+   },
+   "Enemy 199.aseprite": {
+    "frame": { "x": 0, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 200.aseprite": {
+    "frame": { "x": 96, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 201.aseprite": {
+    "frame": { "x": 192, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 202.aseprite": {
+    "frame": { "x": 288, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 203.aseprite": {
+    "frame": { "x": 384, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 204.aseprite": {
+    "frame": { "x": 480, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 60
+   },
+   "Enemy 205.aseprite": {
+    "frame": { "x": 576, "y": 2436, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 1000
+   },
+   "Enemy 206.aseprite": {
+    "frame": { "x": 0, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 207.aseprite": {
+    "frame": { "x": 96, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 208.aseprite": {
+    "frame": { "x": 192, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 209.aseprite": {
+    "frame": { "x": 288, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 210.aseprite": {
+    "frame": { "x": 384, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 70
+   },
+   "Enemy 211.aseprite": {
+    "frame": { "x": 480, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 212.aseprite": {
+    "frame": { "x": 576, "y": 2520, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 213.aseprite": {
+    "frame": { "x": 0, "y": 2604, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 214.aseprite": {
+    "frame": { "x": 96, "y": 2604, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 215.aseprite": {
+    "frame": { "x": 192, "y": 2604, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 216.aseprite": {
+    "frame": { "x": 288, "y": 2604, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 217.aseprite": {
+    "frame": { "x": 0, "y": 2688, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 218.aseprite": {
+    "frame": { "x": 96, "y": 2688, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 219.aseprite": {
+    "frame": { "x": 192, "y": 2688, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   },
+   "Enemy 220.aseprite": {
+    "frame": { "x": 288, "y": 2688, "w": 96, "h": 84 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 84 },
+    "sourceSize": { "w": 96, "h": 84 },
+    "duration": 80
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.7-x64",
+  "image": "EnemySheet.png",
+  "format": "RGBA8888",
+  "size": { "w": 2304, "h": 2772 },
+  "scale": "1"
+ }
+}
