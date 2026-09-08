@@ -1,0 +1,3 @@
+@echo off
+echo Starting TangTang Archer Survivor...
+start "" "C:\Users\User\Downloads\Godot_v4.6.3-stable_win64.exe\Godot_v4.6.3-stable_win64.exe" --path "%~dp0"

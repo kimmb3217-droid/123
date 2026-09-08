@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1main001"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/arena_background.gd" id="2_bg_script"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="4_ui"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="ArenaBackground" type="Node2D" parent="."]
+script = ExtResource("2_bg_script")
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+
+[node name="HUD" parent="." instance=ExtResource("4_ui")]
