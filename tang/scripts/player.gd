@@ -137,10 +137,17 @@ func _shoot(base_dir: Vector2) -> void:
 	
 	var final_dmg: float = base_damage * damage_multiplier
 	var spread_angle: float = deg_to_rad(14.0)
-	var start_angle: float = -(float(arrow_count) - 1.0) * 0.5 * spread_angle
 	
 	for i in range(arrow_count):
-		var angle_offset: float = start_angle + float(i) * spread_angle
+		var angle_offset: float = 0.0
+		if arrow_count > 1:
+			if i == 0:
+				angle_offset = 0.0
+			else:
+				var side: float = 1.0 if (i % 2 == 1) else -1.0
+				var step: float = ceil(float(i) / 2.0)
+				angle_offset = side * step * spread_angle
+		
 		var arrow_dir: Vector2 = base_dir.rotated(angle_offset).normalized()
 		
 		var arrow: Node2D = arrow_scene.instantiate() as Node2D
