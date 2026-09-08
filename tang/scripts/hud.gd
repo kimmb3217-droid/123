@@ -84,8 +84,8 @@ func update_exp(curr: int, max_val: int, lvl: int) -> void:
 	level_label.text = "Lv. %d" % lvl
 
 func update_timer(seconds: float) -> void:
-	var m := int(seconds) / 60
-	var s := int(seconds) % 60
+	var m: int = int(seconds / 60.0)
+	var s: int = int(seconds) % 60
 	time_label.text = "%02d:%02d" % [m, s]
 
 func update_kills(count: int) -> void:
@@ -132,6 +132,6 @@ func _create_upgrade_card(upg: Dictionary) -> Button:
 func show_game_over(time_sec: float, kills: int) -> void:
 	get_tree().paused = true
 	game_over_modal.visible = true
-	var m := int(time_sec) / 60
-	var s := int(time_sec) % 60
+	var m: int = int(time_sec / 60.0)
+	var s: int = int(time_sec) % 60
 	game_over_info.text = "생존 시간: %02d:%02d\n처치한 적: %d마리" % [m, s, kills]
