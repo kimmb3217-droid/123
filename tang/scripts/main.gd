@@ -45,14 +45,14 @@ func _handle_spawning(delta: float) -> void:
 	
 	if spawn_timer <= 0.0:
 		spawn_timer = current_interval
-		_spawn_bat()
+		_spawn_enemy()
 		
 	swarm_event_timer -= delta
 	if swarm_event_timer <= 0.0:
 		swarm_event_timer = 60.0
 		_trigger_swarm_rush(12)
 
-func _spawn_bat() -> void:
+func _spawn_enemy() -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
 		return
 		
@@ -60,9 +60,13 @@ func _spawn_bat() -> void:
 	var spawn_dist: float = randf_range(420.0, 520.0)
 	var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * spawn_dist
 	
-	var bat: Node2D = PoolManager.spawn("bat_enemy", self) as Node2D
-	bat.global_position = spawn_pos
-	bat.call("setup_stats", 1.0, 1.0)
+	# 게임 시작 15초 후부터 오크 등장 확률 점진적 증가 (최대 50%)
+	var orc_chance: float = clamp((game_time - 15.0) / 60.0 * 0.45, 0.0, 0.5)
+	var enemy_type: String = "orc_enemy" if (randf() < orc_chance) else "bat_enemy"
+	
+	var enemy: Node2D = PoolManager.spawn(enemy_type, self) as Node2D
+	enemy.global_position = spawn_pos
+	enemy.call("setup_stats", 1.0, 1.0)
 
 func _trigger_swarm_rush(count: int) -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
@@ -71,9 +75,10 @@ func _trigger_swarm_rush(count: int) -> void:
 	for i in range(count):
 		var angle: float = (float(i) / float(count)) * TAU
 		var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * 450.0
-		var bat: Node2D = PoolManager.spawn("bat_enemy", self) as Node2D
-		bat.global_position = spawn_pos
-		bat.call("setup_stats", 1.0, 1.0)
+		var enemy_type: String = "orc_enemy" if (i % 3 == 0) else "bat_enemy"
+		var enemy: Node2D = PoolManager.spawn(enemy_type, self) as Node2D
+		enemy.global_position = spawn_pos
+		enemy.call("setup_stats", 1.0, 1.0)
 
 func _on_player_level_up(_new_level: int) -> void:
 	hud.call("show_level_up")
