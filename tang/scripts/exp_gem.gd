@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var dist: float = global_position.distance_to(player.global_position)
-	var magnet_range: float = 85.0
+	var magnet_range: float = 20.0
 	if "magnet_radius" in player:
 		magnet_range = float(player.get("magnet_radius"))
 	

@@ -51,7 +51,7 @@ var all_upgrades: Array = [
 	{
 		"id": "magnet",
 		"title": "자력 부적 (Magnet)",
-		"desc": "보석 획득 반경 +50%\n(원거리 흡수)",
+		"desc": "보석 획득 반경 +30\n(원거리 흡수)",
 		"icon": "🧲"
 	},
 	{

@@ -20,7 +20,7 @@ var attack_cooldown: float = 0.5
 var cooldown_timer: float = 0.0
 var arrow_count: int = 1
 var pierce_count: int = 1
-var magnet_radius: float = 85.0
+var magnet_radius: float = 20.0
 
 var auto_attack_enabled: bool = true
 var target_enemy: Node2D = null
@@ -224,7 +224,7 @@ func apply_upgrade(upgrade_id: String) -> void:
 		"speed":
 			speed += 22.0
 		"magnet":
-			magnet_radius += 45.0
+			magnet_radius += 30.0
 		"heal_hp":
 			max_hp += 25.0
 			current_hp = min(max_hp, current_hp + 40.0)
