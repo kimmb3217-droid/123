@@ -6,7 +6,8 @@ static var pools: Dictionary = {
 	"bat_enemy": [],
 	"orc_enemy": [],
 	"orc_rider_enemy": [],
-	"exp_gem": []
+	"exp_gem": [],
+	"damage_number": []
 }
 
 static var scenes: Dictionary = {
@@ -18,14 +19,38 @@ static var scenes: Dictionary = {
 }
 static var loaded_scenes: Dictionary = {}
 
+# 빠른 탐색을 위해 살아있는 적 노드 캐시
+static var active_enemies: Array[Node2D] = []
+
 static func clear_all() -> void:
 	pools = {
 		"arrow": [],
 		"bat_enemy": [],
 		"orc_enemy": [],
 		"orc_rider_enemy": [],
-		"exp_gem": []
+		"exp_gem": [],
+		"damage_number": []
 	}
+	active_enemies.clear()
+
+static func register_enemy(enemy: Node2D) -> void:
+	if not active_enemies.has(enemy):
+		active_enemies.append(enemy)
+
+static func unregister_enemy(enemy: Node2D) -> void:
+	active_enemies.erase(enemy)
+
+static func get_nearest_enemy(from_pos: Vector2, max_dist: float) -> Node2D:
+	var nearest: Node2D = null
+	var min_dist_sq: float = max_dist * max_dist
+	
+	for enemy in active_enemies:
+		if is_instance_valid(enemy) and not enemy.get("is_dead"):
+			var d_sq: float = from_pos.distance_squared_to(enemy.global_position)
+			if d_sq < min_dist_sq:
+				min_dist_sq = d_sq
+				nearest = enemy
+	return nearest
 
 static func spawn(pool_name: String, parent: Node) -> Node:
 	if not pools.has(pool_name):
@@ -85,3 +110,4 @@ static func recycle(pool_name: String, obj: Node) -> void:
 		pools[pool_name] = []
 		
 	pools[pool_name].append(obj)
+

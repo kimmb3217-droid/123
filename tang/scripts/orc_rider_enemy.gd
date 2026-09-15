@@ -26,7 +26,7 @@ func _ready() -> void:
 	add_to_group("enemy")
 	add_to_group("orc_rider")
 	collision_layer = 2
-	collision_mask = 2
+	collision_mask = 0
 	
 	animated_sprite.sprite_frames = SpriteHelperScript.get_orc_rider_frames()
 	animated_sprite.play("walk")
@@ -36,6 +36,7 @@ func _ready() -> void:
 	var players: Array[Node] = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0] as Node2D
+	PoolManager.register_enemy(self)
 
 func setup_stats(hp_mult: float = 1.0, speed_mult: float = 1.0) -> void:
 	max_hp = 315.0 * hp_mult
@@ -51,6 +52,7 @@ func setup_stats(hp_mult: float = 1.0, speed_mult: float = 1.0) -> void:
 		var players: Array[Node] = get_tree().get_nodes_in_group("player")
 		if players.size() > 0:
 			player = players[0] as Node2D
+	PoolManager.register_enemy(self)
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -66,42 +68,29 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var to_player: Vector2 = (player.global_position - global_position)
-	var dist_to_player: float = to_player.length()
+	var dist_sq: float = to_player.length_squared()
 	var move_dir: Vector2 = to_player.normalized()
 	
 	if abs(to_player.x) > 0.05 and not is_attacking:
 		animated_sprite.flip_h = (to_player.x < 0)
 		
-	var separation: Vector2 = Vector2.ZERO
-	var enemies: Array[Node] = get_tree().get_nodes_in_group("enemy")
-	for other in enemies:
-		if other != self and is_instance_valid(other) and not other.get("is_dead"):
-			var other_node: Node2D = other as Node2D
-			var dist: float = global_position.distance_to(other_node.global_position)
-			if dist < 28.0 and dist > 0.1:
-				separation += (global_position - other_node.global_position).normalized() * (28.0 - dist)
-				
-	var final_dir: Vector2 = (move_dir * 1.0 + separation.normalized() * 0.4).normalized()
 	knockback = knockback.move_toward(Vector2.ZERO, 400.0 * delta)
 	
-	# 돌진 공격 판정 (기마 창/무기 리치 46px)
-	if dist_to_player <= ATTACK_RANGE and attack_cooldown_timer <= 0.0 and not is_attacking:
+	# 돌진 공격 판정 (기마 창/무기 리치 46px -> 2116)
+	if dist_sq <= 2116.0 and attack_cooldown_timer <= 0.0 and not is_attacking:
 		_perform_attack()
 		
-	# 플레이어를 관통하여 스쳐 지나갈 때 확정 피해
-	if dist_to_player <= 24.0:
+	# 플레이어를 관통하여 스쳐 지나갈 때 확정 피해 (24px -> 576)
+	if dist_sq <= 576.0:
 		if player.has_method("take_damage"):
 			player.take_damage(damage)
 			
 	if is_attacking:
-		# 공격 중에도 기동성 살려서 약간의 관성 이동
-		velocity = move_dir * (speed * 0.35) + knockback
+		global_position += (move_dir * (speed * 0.35) + knockback) * delta
 	else:
-		velocity = final_dir * speed + knockback
+		global_position += (move_dir * speed + knockback) * delta
 		if animated_sprite.animation != "walk" and animated_sprite.animation != "hurt":
 			animated_sprite.play("walk")
-			
-	move_and_slide()
 
 func _perform_attack() -> void:
 	is_attacking = true
@@ -121,8 +110,8 @@ func _perform_attack() -> void:
 	var hit_timer := get_tree().create_timer(0.2)
 	hit_timer.timeout.connect(func():
 		if not is_dead and is_instance_valid(player):
-			var d := global_position.distance_to(player.global_position)
-			if d <= ATTACK_RANGE + 14.0:
+			var d_sq := global_position.distance_squared_to(player.global_position)
+			if d_sq <= 3600.0: # (60px)^2
 				if player.has_method("take_damage"):
 					player.take_damage(damage)
 	)
@@ -160,6 +149,7 @@ func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
+	PoolManager.unregister_enemy(self)
 	is_attacking = false
 	set_physics_process(false)
 	collision_shape.set_deferred("disabled", true)

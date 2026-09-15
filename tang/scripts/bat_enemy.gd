@@ -19,7 +19,7 @@ var knockback: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	add_to_group("enemy")
 	collision_layer = 2
-	collision_mask = 2
+	collision_mask = 0
 	
 	animated_sprite.sprite_frames = SpriteHelperScript.get_bat_frames()
 	animated_sprite.play("fly")
@@ -29,6 +29,7 @@ func _ready() -> void:
 	var players: Array[Node] = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0] as Node2D
+	PoolManager.register_enemy(self)
 
 func setup_stats(hp_mult: float, speed_mult: float) -> void:
 	max_hp = 35.0 * hp_mult
@@ -42,6 +43,7 @@ func setup_stats(hp_mult: float, speed_mult: float) -> void:
 		var players: Array[Node] = get_tree().get_nodes_in_group("player")
 		if players.size() > 0:
 			player = players[0] as Node2D
+	PoolManager.register_enemy(self)
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -54,29 +56,18 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var to_player: Vector2 = (player.global_position - global_position)
-	var dist_to_player: float = to_player.length()
+	var dist_sq: float = to_player.length_squared()
 	var move_dir: Vector2 = to_player.normalized()
-	
-	var separation: Vector2 = Vector2.ZERO
-	var enemies: Array[Node] = get_tree().get_nodes_in_group("enemy")
-	for other in enemies:
-		if other != self and is_instance_valid(other) and not other.get("is_dead"):
-			var other_node: Node2D = other as Node2D
-			var dist: float = global_position.distance_to(other_node.global_position)
-			if dist < 22.0 and dist > 0.1:
-				separation += (global_position - other_node.global_position).normalized() * (22.0 - dist)
-				
-	var final_dir: Vector2 = (move_dir * 1.0 + separation.normalized() * 0.5).normalized()
 	
 	knockback = knockback.move_toward(Vector2.ZERO, 350.0 * delta)
 	
-	velocity = final_dir * speed + knockback
-	move_and_slide()
+	global_position += (move_dir * speed + knockback) * delta
 	
-	if abs(final_dir.x) > 0.05:
-		animated_sprite.flip_h = (final_dir.x < 0)
+	if abs(to_player.x) > 0.05:
+		animated_sprite.flip_h = (to_player.x < 0)
 		
-	if dist_to_player <= 22.0:
+	# 22.0 * 22.0 = 484.0 (제곱 비교로 sqrt 연산 제거)
+	if dist_sq <= 484.0:
 		if player.has_method("take_damage"):
 			player.take_damage(damage)
 
@@ -107,6 +98,7 @@ func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
+	PoolManager.unregister_enemy(self)
 	set_physics_process(false)
 	collision_shape.set_deferred("disabled", true)
 	
