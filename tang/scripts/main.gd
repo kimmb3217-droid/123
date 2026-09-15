@@ -52,6 +52,14 @@ func _handle_spawning(delta: float) -> void:
 		swarm_event_timer = 60.0
 		_trigger_swarm_rush(12)
 
+func _get_active_orc_rider_count() -> int:
+	var count: int = 0
+	var riders: Array[Node] = get_tree().get_nodes_in_group("orc_rider")
+	for r in riders:
+		if is_instance_valid(r) and not r.get("is_dead") and r.is_inside_tree() and r.visible:
+			count += 1
+	return count
+
 func _spawn_enemy() -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
 		return
@@ -60,9 +68,18 @@ func _spawn_enemy() -> void:
 	var spawn_dist: float = randf_range(420.0, 520.0)
 	var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * spawn_dist
 	
-	# 게임 시작 15초 후부터 오크 등장 확률 점진적 증가 (최대 50%)
-	var orc_chance: float = clamp((game_time - 15.0) / 60.0 * 0.45, 0.0, 0.5)
-	var enemy_type: String = "orc_enemy" if (randf() < orc_chance) else "bat_enemy"
+	var p_level: int = int(player.get("level"))
+	var active_riders: int = _get_active_orc_rider_count()
+	
+	var enemy_type: String = "bat_enemy"
+	
+	# 15레벨 이상일 때: 기본 스폰에 오크 라이더 포함 (필드 최대 3마리 제한)
+	if p_level >= 15 and active_riders < 3 and randf() < 0.2:
+		enemy_type = "orc_rider_enemy"
+	else:
+		# 게임 시작 15초 후부터 오크 등장 확률 점진적 증가 (최대 50%)
+		var orc_chance: float = clamp((game_time - 15.0) / 60.0 * 0.45, 0.0, 0.5)
+		enemy_type = "orc_enemy" if (randf() < orc_chance) else "bat_enemy"
 	
 	var enemy: Node2D = PoolManager.spawn(enemy_type, self) as Node2D
 	enemy.global_position = spawn_pos
@@ -72,10 +89,25 @@ func _trigger_swarm_rush(count: int) -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
 		return
 		
+	var p_level: int = int(player.get("level"))
+	var active_riders: int = _get_active_orc_rider_count()
+	var spawned_rider_this_wave: bool = false
+	
 	for i in range(count):
 		var angle: float = (float(i) / float(count)) * TAU
 		var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * 450.0
-		var enemy_type: String = "orc_enemy" if (i % 3 == 0) else "bat_enemy"
+		var enemy_type: String = "bat_enemy"
+		
+		# 5레벨 이상이고 웨이브 시 아직 오크 라이더가 없으면 1마리 스폰
+		if p_level >= 5 and not spawned_rider_this_wave and active_riders < 1:
+			enemy_type = "orc_rider_enemy"
+			spawned_rider_this_wave = true
+			active_riders += 1
+		elif i % 3 == 0:
+			enemy_type = "orc_enemy"
+		else:
+			enemy_type = "bat_enemy"
+			
 		var enemy: Node2D = PoolManager.spawn(enemy_type, self) as Node2D
 		enemy.global_position = spawn_pos
 		enemy.call("setup_stats", 1.0, 1.0)

@@ -5,6 +5,7 @@ static var pools: Dictionary = {
 	"arrow": [],
 	"bat_enemy": [],
 	"orc_enemy": [],
+	"orc_rider_enemy": [],
 	"exp_gem": []
 }
 
@@ -12,6 +13,7 @@ static var scenes: Dictionary = {
 	"arrow": "res://scenes/arrow.tscn",
 	"bat_enemy": "res://scenes/bat_enemy.tscn",
 	"orc_enemy": "res://scenes/orc_enemy.tscn",
+	"orc_rider_enemy": "res://scenes/orc_rider_enemy.tscn",
 	"exp_gem": "res://scenes/exp_gem.tscn"
 }
 static var loaded_scenes: Dictionary = {}
@@ -21,6 +23,7 @@ static func clear_all() -> void:
 		"arrow": [],
 		"bat_enemy": [],
 		"orc_enemy": [],
+		"orc_rider_enemy": [],
 		"exp_gem": []
 	}
 
