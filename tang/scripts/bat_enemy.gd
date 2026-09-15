@@ -113,9 +113,7 @@ func die() -> void:
 	if player != null and player.has_method("add_kill"):
 		player.add_kill()
 		
-	var gem: Node2D = PoolManager.spawn("exp_gem", get_parent()) as Node2D
-	gem.global_position = global_position
-	gem.call("setup", 1)
+	call_deferred("_spawn_exp_gem", global_position)
 	
 	if animated_sprite.sprite_frames.has_animation("death"):
 		animated_sprite.play("death")
@@ -128,3 +126,9 @@ func die() -> void:
 		, CONNECT_ONE_SHOT)
 	else:
 		PoolManager.recycle("bat_enemy", self)
+
+func _spawn_exp_gem(pos: Vector2) -> void:
+	var gem: Node2D = PoolManager.spawn("exp_gem", get_parent()) as Node2D
+	if gem != null:
+		gem.global_position = pos
+		gem.call("setup", 1)

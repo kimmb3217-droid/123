@@ -44,7 +44,7 @@ func _handle_hit(target: Node) -> void:
 		target.take_damage(damage, direction * 120.0)
 		pierce_count -= 1
 		if pierce_count <= 0:
-			despawn()
+			call_deferred("despawn")
 
 func despawn() -> void:
 	PoolManager.recycle("arrow", self)

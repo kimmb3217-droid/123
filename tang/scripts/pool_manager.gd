@@ -8,10 +8,11 @@ static var pools: Dictionary = {
 }
 
 static var scenes: Dictionary = {
-	"arrow": preload("res://scenes/arrow.tscn"),
-	"bat_enemy": preload("res://scenes/bat_enemy.tscn"),
-	"exp_gem": preload("res://scenes/exp_gem.tscn")
+	"arrow": "res://scenes/arrow.tscn",
+	"bat_enemy": "res://scenes/bat_enemy.tscn",
+	"exp_gem": "res://scenes/exp_gem.tscn"
 }
+static var loaded_scenes: Dictionary = {}
 
 static func clear_all() -> void:
 	pools = {
@@ -35,15 +36,19 @@ static func spawn(pool_name: String, parent: Node) -> Node:
 			
 	if obj == null:
 		if scenes.has(pool_name):
-			var scene: PackedScene = scenes[pool_name]
-			obj = scene.instantiate()
+			if not loaded_scenes.has(pool_name):
+				loaded_scenes[pool_name] = load(scenes[pool_name])
+			var scene: PackedScene = loaded_scenes[pool_name]
+			if scene != null:
+				obj = scene.instantiate()
+			else:
+				push_error("Failed to load scene for pool: " + pool_name)
+				return null
 		else:
 			push_error("Unknown pool name: " + pool_name)
 			return null
 			
 	if obj.get_parent() != parent:
-		if obj.get_parent() != null:
-			obj.get_parent().remove_child(obj)
 		parent.add_child(obj)
 	
 	obj.show()
