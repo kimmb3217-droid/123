@@ -150,10 +150,9 @@ func _shoot(base_dir: Vector2) -> void:
 		
 		var arrow_dir: Vector2 = base_dir.rotated(angle_offset).normalized()
 		
-		var arrow: Node2D = arrow_scene.instantiate() as Node2D
+		var arrow: Node2D = PoolManager.spawn("arrow", get_parent()) as Node2D
 		arrow.global_position = shoot_point.global_position
 		arrow.call("setup", arrow_dir, final_dmg, pierce_count)
-		get_parent().add_child(arrow)
 
 func _find_nearest_enemy(max_dist: float) -> Node2D:
 	var enemies: Array[Node] = get_tree().get_nodes_in_group("enemy")

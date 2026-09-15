@@ -60,25 +60,26 @@ func _spawn_bat() -> void:
 	var spawn_dist: float = randf_range(420.0, 520.0)
 	var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * spawn_dist
 	
-	var bat: Node2D = bat_scene.instantiate() as Node2D
+	var bat: Node2D = PoolManager.spawn("bat_enemy", self) as Node2D
 	bat.global_position = spawn_pos
 	
 	var hp_mult: float = 1.0 + (game_time / 120.0) * 0.8
 	var speed_mult: float = min(1.4, 1.0 + (game_time / 240.0) * 0.3)
 	bat.call("setup_stats", hp_mult, speed_mult)
-	
-	add_child(bat)
 
 func _trigger_swarm_rush(count: int) -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
 		return
 		
+	var hp_mult: float = 1.0 + (game_time / 120.0) * 0.8
+	var speed_mult: float = min(1.4, 1.0 + (game_time / 240.0) * 0.3)
+	
 	for i in range(count):
 		var angle: float = (float(i) / float(count)) * TAU
 		var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * 450.0
-		var bat: Node2D = bat_scene.instantiate() as Node2D
+		var bat: Node2D = PoolManager.spawn("bat_enemy", self) as Node2D
 		bat.global_position = spawn_pos
-		add_child(bat)
+		bat.call("setup_stats", hp_mult, speed_mult)
 
 func _on_player_level_up(_new_level: int) -> void:
 	hud.call("show_level_up")
@@ -88,5 +89,6 @@ func _on_player_died() -> void:
 	hud.call("show_game_over", game_time, player.get("kill_count"))
 
 func _restart_game() -> void:
+	PoolManager.clear_all()
 	get_tree().paused = false
 	get_tree().reload_current_scene()

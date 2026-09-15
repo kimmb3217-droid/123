@@ -16,9 +16,11 @@ func _ready() -> void:
 
 func setup(value: int = 1) -> void:
 	exp_value = value
+	is_attracted = false
+	speed = 0.0
 
 func _physics_process(delta: float) -> void:
-	if player == null:
+	if player == null or not is_instance_valid(player):
 		var players: Array[Node] = get_tree().get_nodes_in_group("player")
 		if players.size() > 0:
 			player = players[0] as Node2D
@@ -40,4 +42,4 @@ func _physics_process(delta: float) -> void:
 		if dist <= 16.0:
 			if player.has_method("add_exp"):
 				player.add_exp(exp_value)
-			queue_free()
+			PoolManager.recycle("exp_gem", self)

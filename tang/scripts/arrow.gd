@@ -21,12 +21,14 @@ func setup(dir: Vector2, dmg: float, pierce: int = 1) -> void:
 	damage = dmg
 	pierce_count = pierce
 	rotation = direction.angle()
+	traveled_time = 0.0
+	hit_enemies.clear()
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 	traveled_time += delta
 	if traveled_time >= lifetime:
-		queue_free()
+		despawn()
 
 func _on_body_entered(body: Node2D) -> void:
 	_handle_hit(body)
@@ -42,4 +44,7 @@ func _handle_hit(target: Node) -> void:
 		target.take_damage(damage, direction * 120.0)
 		pierce_count -= 1
 		if pierce_count <= 0:
-			queue_free()
+			despawn()
+
+func despawn() -> void:
+	PoolManager.recycle("arrow", self)
