@@ -73,8 +73,8 @@ func _spawn_enemy() -> void:
 	
 	var enemy_type: String = "bat_enemy"
 	
-	# 15레벨 이상일 때: 기본 스폰에 오크 라이더 포함 (필드 최대 3마리 제한)
-	if p_level >= 15 and active_riders < 3 and randf() < 0.2:
+	# 10레벨 이상일 때: 기본 평소 스폰에 오크 라이더 등장 (필드 최대 3마리 제한)
+	if p_level >= 10 and active_riders < 3 and randf() < 0.25:
 		enemy_type = "orc_rider_enemy"
 	else:
 		# 게임 시작 15초 후부터 오크 등장 확률 점진적 증가 (최대 50%)
@@ -85,32 +85,33 @@ func _spawn_enemy() -> void:
 	enemy.global_position = spawn_pos
 	enemy.call("setup_stats", 1.0, 1.0)
 
-func _trigger_swarm_rush(count: int) -> void:
+func _trigger_swarm_rush(_count: int) -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
 		return
 		
-	var p_level: int = int(player.get("level"))
-	var active_riders: int = _get_active_orc_rider_count()
-	var spawned_rider_this_wave: bool = false
+	# 웨이브 시 오크 라이더 4마리를 중심으로, 각 오크 라이더 주변에 호위 몬스터 30마리씩(총 120마리) 동시 돌격
+	var rider_count: int = 4
+	var minion_per_rider: int = 30
 	
-	for i in range(count):
-		var angle: float = (float(i) / float(count)) * TAU
-		var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * 450.0
-		var enemy_type: String = "bat_enemy"
+	for r_idx in range(rider_count):
+		var rider_angle: float = (float(r_idx) / float(rider_count)) * TAU + randf_range(-0.1, 0.1)
+		var rider_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(rider_angle) * 480.0
 		
-		# 5레벨 이상이고 웨이브 시 아직 오크 라이더가 없으면 1마리 스폰
-		if p_level >= 5 and not spawned_rider_this_wave and active_riders < 1:
-			enemy_type = "orc_rider_enemy"
-			spawned_rider_this_wave = true
-			active_riders += 1
-		elif i % 3 == 0:
-			enemy_type = "orc_enemy"
-		else:
-			enemy_type = "bat_enemy"
+		# 오크 라이더 스폰
+		var rider: Node2D = PoolManager.spawn("orc_rider_enemy", self) as Node2D
+		rider.global_position = rider_pos
+		rider.call("setup_stats", 1.0, 1.0)
+		
+		# 오크 라이더 1마리당 주변 30마리 호위 몬스터 (박쥐 및 일반 오크 무리)
+		for m_idx in range(minion_per_rider):
+			var offset_angle: float = randf() * TAU
+			var offset_dist: float = randf_range(15.0, 75.0)
+			var minion_pos: Vector2 = rider_pos + Vector2.RIGHT.rotated(offset_angle) * offset_dist
 			
-		var enemy: Node2D = PoolManager.spawn(enemy_type, self) as Node2D
-		enemy.global_position = spawn_pos
-		enemy.call("setup_stats", 1.0, 1.0)
+			var minion_type: String = "orc_enemy" if (m_idx % 4 == 0) else "bat_enemy"
+			var minion: Node2D = PoolManager.spawn(minion_type, self) as Node2D
+			minion.global_position = minion_pos
+			minion.call("setup_stats", 1.0, 1.0)
 
 func _on_player_level_up(_new_level: int) -> void:
 	hud.call("show_level_up")

@@ -1,5 +1,7 @@
 extends RefCounted
 
+static var _frames_cache: Dictionary = {}
+
 static func create_sprite_frames(anim_configs: Array) -> SpriteFrames:
 	var frames: SpriteFrames = SpriteFrames.new()
 	if frames.has_animation("default"):
@@ -30,7 +32,9 @@ static func create_sprite_frames(anim_configs: Array) -> SpriteFrames:
 	return frames
 
 static func get_archer_frames() -> SpriteFrames:
-	return create_sprite_frames([
+	if _frames_cache.has("archer"):
+		return _frames_cache["archer"]
+	var f := create_sprite_frames([
 		{
 			"name": "idle",
 			"path": "res://asset/character01/character01/Characters(100x100)/Archer/Archer with shadows/Archer_Idle.png",
@@ -67,9 +71,13 @@ static func get_archer_frames() -> SpriteFrames:
 			"loop": false
 		}
 	])
+	_frames_cache["archer"] = f
+	return f
 
 static func get_bat_frames() -> SpriteFrames:
-	return create_sprite_frames([
+	if _frames_cache.has("bat"):
+		return _frames_cache["bat"]
+	var f := create_sprite_frames([
 		{
 			"name": "fly",
 			"path": "res://asset/character01/character01/Characters(100x100)/Bat/Bat with shadows/Bat_Flying.png",
@@ -99,9 +107,13 @@ static func get_bat_frames() -> SpriteFrames:
 			"loop": false
 		}
 	])
+	_frames_cache["bat"] = f
+	return f
 
 static func get_orc_frames() -> SpriteFrames:
-	return create_sprite_frames([
+	if _frames_cache.has("orc"):
+		return _frames_cache["orc"]
+	var f := create_sprite_frames([
 		{
 			"name": "idle",
 			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Idle.png",
@@ -145,9 +157,13 @@ static func get_orc_frames() -> SpriteFrames:
 			"loop": false
 		}
 	])
+	_frames_cache["orc"] = f
+	return f
 
 static func get_orc_rider_frames() -> SpriteFrames:
-	return create_sprite_frames([
+	if _frames_cache.has("orc_rider"):
+		return _frames_cache["orc_rider"]
+	var f := create_sprite_frames([
 		{
 			"name": "idle",
 			"path": "res://asset/character01/character01/Characters(100x100)/Orc rider/Orc rider with shadows/Orc rider_Idle.png",
@@ -198,5 +214,7 @@ static func get_orc_rider_frames() -> SpriteFrames:
 			"loop": false
 		}
 	])
+	_frames_cache["orc_rider"] = f
+	return f
 
 

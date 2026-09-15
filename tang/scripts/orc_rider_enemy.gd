@@ -4,9 +4,9 @@ const SpriteHelperScript = preload("res://scripts/sprite_helper.gd")
 const DamageNumberScript = preload("res://scripts/damage_number.gd")
 
 # 오크 스탯: max_hp=52.5, speed=60.0, damage=12.0
-# 오크 라이더 스탯: 오크의 2배 (max_hp=105.0, damage=24.0), 이동속도는 오크의 3배 (speed=180.0)
-@export var max_hp: float = 105.0
-var current_hp: float = 105.0
+# 오크 라이더 스탯: 기존의 3배 체력 (max_hp=315.0, damage=24.0), 이동속도는 오크의 3배 (speed=180.0)
+@export var max_hp: float = 315.0
+var current_hp: float = 315.0
 @export var speed: float = 180.0
 @export var damage: float = 24.0
 
@@ -38,7 +38,7 @@ func _ready() -> void:
 		player = players[0] as Node2D
 
 func setup_stats(hp_mult: float = 1.0, speed_mult: float = 1.0) -> void:
-	max_hp = 105.0 * hp_mult
+	max_hp = 315.0 * hp_mult
 	current_hp = max_hp
 	speed = 180.0 * speed_mult
 	is_dead = false
@@ -168,6 +168,7 @@ func die() -> void:
 		player.add_kill()
 		
 	call_deferred("_spawn_exp_gem", global_position)
+	call_deferred("_spawn_dismounted_orc", global_position)
 	
 	if animated_sprite.sprite_frames.has_animation("death"):
 		animated_sprite.play("death")
@@ -185,4 +186,11 @@ func _spawn_exp_gem(pos: Vector2) -> void:
 	var gem: Node2D = PoolManager.spawn("exp_gem", get_parent()) as Node2D
 	if gem != null:
 		gem.global_position = pos
-		gem.call("setup", 4) # 강력한 기마 몬스터이므로 경험치 4 드랍
+		gem.call("setup", 4)
+
+func _spawn_dismounted_orc(pos: Vector2) -> void:
+	var orc: Node2D = PoolManager.spawn("orc_enemy", get_parent()) as Node2D
+	if orc != null:
+		orc.global_position = pos
+		orc.call("setup_stats", 1.0, 1.0) # 풀피 기본 오크로 생성
+
