@@ -41,7 +41,7 @@ var is_dead: bool = false
 func _ready() -> void:
 	add_to_group("player")
 	collision_layer = 1
-	collision_mask = 2
+	collision_mask = 0
 	
 	animated_sprite.sprite_frames = SpriteHelperScript.get_archer_frames()
 	animated_sprite.play("idle")

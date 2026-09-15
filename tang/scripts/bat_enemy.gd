@@ -19,7 +19,7 @@ var knockback: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	add_to_group("enemy")
 	collision_layer = 2
-	collision_mask = 1 | 2
+	collision_mask = 2
 	
 	animated_sprite.sprite_frames = SpriteHelperScript.get_bat_frames()
 	animated_sprite.play("fly")
@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var to_player: Vector2 = (player.global_position - global_position)
+	var dist_to_player: float = to_player.length()
 	var move_dir: Vector2 = to_player.normalized()
 	
 	var separation: Vector2 = Vector2.ZERO
@@ -67,11 +68,9 @@ func _physics_process(delta: float) -> void:
 	if abs(final_dir.x) > 0.05:
 		animated_sprite.flip_h = (final_dir.x < 0)
 		
-	for i in range(get_slide_collision_count()):
-		var col: KinematicCollision2D = get_slide_collision(i)
-		var collider: Object = col.get_collider()
-		if collider != null and collider.is_in_group("player") and collider.has_method("take_damage"):
-			collider.take_damage(damage)
+	if dist_to_player <= 22.0:
+		if player.has_method("take_damage"):
+			player.take_damage(damage)
 
 func take_damage(amount: float, kb: Vector2 = Vector2.ZERO) -> void:
 	if is_dead:
