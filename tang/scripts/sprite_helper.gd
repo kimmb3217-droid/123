@@ -116,42 +116,42 @@ static func get_orc_frames() -> SpriteFrames:
 	var f := create_sprite_frames([
 		{
 			"name": "idle",
-			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Idle.png",
+			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc with shadows/Orc_Idle.png",
 			"count": 6,
 			"fps": 8.0,
 			"loop": true
 		},
 		{
 			"name": "walk",
-			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Walk.png",
+			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc with shadows/Orc_Walk.png",
 			"count": 8,
 			"fps": 10.0,
 			"loop": true
 		},
 		{
 			"name": "attack",
-			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Attack01.png",
+			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc with shadows/Orc_Attack01.png",
 			"count": 6,
 			"fps": 12.0,
 			"loop": false
 		},
 		{
 			"name": "attack02",
-			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Attack02.png",
+			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc with shadows/Orc_Attack02.png",
 			"count": 6,
 			"fps": 12.0,
 			"loop": false
 		},
 		{
 			"name": "hurt",
-			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Hurt.png",
+			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc with shadows/Orc_Hurt.png",
 			"count": 4,
 			"fps": 10.0,
 			"loop": false
 		},
 		{
 			"name": "death",
-			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc/Orc_Death.png",
+			"path": "res://asset/character01/character01/Characters(100x100)/Orc/Orc with shadows/Orc_Death.png",
 			"count": 4,
 			"fps": 8.0,
 			"loop": false

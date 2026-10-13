@@ -110,4 +110,3 @@ static func recycle(pool_name: String, obj: Node) -> void:
 		pools[pool_name] = []
 		
 	pools[pool_name].append(obj)
-
