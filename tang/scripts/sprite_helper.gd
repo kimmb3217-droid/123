@@ -261,6 +261,24 @@ static func get_typhoon_frames() -> SpriteFrames:
 	_frames_cache["typhoon"] = frames
 	return frames
 
+static func get_heal_effect_frames() -> SpriteFrames:
+	if _frames_cache.has("heal_effect"):
+		return _frames_cache["heal_effect"]
+	
+	var frames: SpriteFrames = create_sprite_frames([
+		{
+			"name": "heal",
+			"path": "res://asset/character01/character01/Characters(100x100)/Priest/Magic(projectile)/Priest_Heal_effect.png",
+			"count": 4,
+			"fps": 10.0,
+			"loop": false,
+			"width": 100.0,
+			"height": 100.0
+		}
+	])
+	_frames_cache["heal_effect"] = frames
+	return frames
+
 
 
 

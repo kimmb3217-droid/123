@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 	player.connect("health_changed", Callable(hud, "update_health"))
 	player.connect("exp_changed", Callable(hud, "update_exp"))
+	player.connect("control_mode_changed", Callable(hud, "update_control_mode"))
 	player.connect("auto_attack_toggled", Callable(hud, "update_auto_attack"))
 	player.connect("level_up_triggered", Callable(self, "_on_player_level_up"))
 	player.connect("kill_count_changed", Callable(hud, "update_kills"))
@@ -25,7 +26,10 @@ func _ready() -> void:
 	
 	hud.call("update_health", player.get("current_hp"), player.get("max_hp"))
 	hud.call("update_exp", player.get("current_exp"), player.get("exp_to_next"), player.get("level"))
-	hud.call("update_auto_attack", player.get("auto_attack_enabled"))
+	if player.has_method("get_control_mode_name"):
+		hud.call("update_control_mode", player.call("get_control_mode_name"))
+	else:
+		hud.call("update_auto_attack", player.get("auto_attack_enabled"))
 	hud.call("update_kills", 0)
 	hud.call("update_timer", 0.0)
 

@@ -91,13 +91,23 @@ func update_timer(seconds: float) -> void:
 func update_kills(count: int) -> void:
 	kill_label.text = "💀 %d" % count
 
+func update_control_mode(mode_name: String) -> void:
+	match mode_name:
+		"AUTO_ATTACK":
+			auto_attack_btn.text = "⚡ 자동 공격 모드 [Caps Lock]"
+			auto_attack_btn.modulate = Color(0.3, 1.0, 0.4)
+		"AUTO_MOVE":
+			auto_attack_btn.text = "🏃 자동 무빙 모드 [Caps Lock]"
+			auto_attack_btn.modulate = Color(0.3, 0.7, 1.0)
+		"MANUAL":
+			auto_attack_btn.text = "🎮 수동 조작 모드 [Caps Lock]"
+			auto_attack_btn.modulate = Color(1.0, 0.7, 0.2)
+		_:
+			auto_attack_btn.text = "MODE: %s [Caps Lock]" % mode_name
+
 func update_auto_attack(is_enabled: bool) -> void:
-	if is_enabled:
-		auto_attack_btn.text = "⚡ AUTO-ATTACK: ON [Caps Lock]"
-		auto_attack_btn.modulate = Color(0.3, 1.0, 0.4)
-	else:
-		auto_attack_btn.text = "🎯 AUTO-ATTACK: OFF [Caps Lock]"
-		auto_attack_btn.modulate = Color(1.0, 0.6, 0.2)
+	# 하위 호환성 유지용 (update_control_mode와 병행)
+	pass
 
 func show_level_up() -> void:
 	get_tree().paused = true
