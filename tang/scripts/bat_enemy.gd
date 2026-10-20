@@ -12,6 +12,7 @@ var current_hp: float = 35.0
 var player: Node2D = null
 var is_dead: bool = false
 var knockback: Vector2 = Vector2.ZERO
+var stun_timer: float = 0.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -37,6 +38,7 @@ func setup_stats(hp_mult: float, speed_mult: float) -> void:
 	speed = 90.0 * speed_mult
 	is_dead = false
 	knockback = Vector2.ZERO
+	stun_timer = 0.0
 	animated_sprite.modulate = Color(1, 1, 1, 1)
 	animated_sprite.play("fly")
 	if player == null or not is_instance_valid(player):
@@ -45,9 +47,24 @@ func setup_stats(hp_mult: float, speed_mult: float) -> void:
 			player = players[0] as Node2D
 	PoolManager.register_enemy(self)
 
+func apply_stun(duration: float) -> void:
+	if is_dead:
+		return
+	stun_timer = max(stun_timer, duration)
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+		
+	knockback = knockback.move_toward(Vector2.ZERO, 350.0 * delta)
+	
+	if stun_timer > 0.0:
+		stun_timer -= delta
+		global_position += knockback * delta
+		animated_sprite.modulate = Color(0.65, 0.9, 1.2, 1.0)
+		return
+	elif animated_sprite.modulate != Color(1, 1, 1, 1):
+		animated_sprite.modulate = Color(1, 1, 1, 1)
 		
 	if player == null or not is_instance_valid(player):
 		var players: Array[Node] = get_tree().get_nodes_in_group("player")
@@ -58,8 +75,6 @@ func _physics_process(delta: float) -> void:
 	var to_player: Vector2 = (player.global_position - global_position)
 	var dist_sq: float = to_player.length_squared()
 	var move_dir: Vector2 = to_player.normalized()
-	
-	knockback = knockback.move_toward(Vector2.ZERO, 350.0 * delta)
 	
 	global_position += (move_dir * speed + knockback) * delta
 	

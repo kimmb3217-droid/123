@@ -217,4 +217,51 @@ static func get_orc_rider_frames() -> SpriteFrames:
 	_frames_cache["orc_rider"] = f
 	return f
 
+static func get_wind_gust_frames() -> SpriteFrames:
+	if _frames_cache.has("wind_gust"):
+		return _frames_cache["wind_gust"]
+	
+	var frames: SpriteFrames = SpriteFrames.new()
+	if frames.has_animation("default"):
+		frames.remove_animation("default")
+	
+	frames.add_animation("gust")
+	frames.set_animation_speed("gust", 18.0)
+	frames.set_animation_loop("gust", false)
+	
+	for i in range(9):
+		var num_str := "%04d" % i
+		var path := "res://asset/directional_smoke_burst_005_large_gray/frame" + num_str + ".png"
+		var tex := load(path) as Texture2D
+		if tex != null:
+			frames.add_frame("gust", tex)
+			
+	_frames_cache["wind_gust"] = frames
+	return frames
+
+static func get_typhoon_frames() -> SpriteFrames:
+	if _frames_cache.has("typhoon"):
+		return _frames_cache["typhoon"]
+	
+	var frames: SpriteFrames = SpriteFrames.new()
+	if frames.has_animation("default"):
+		frames.remove_animation("default")
+	
+	frames.add_animation("typhoon")
+	frames.set_animation_speed("typhoon", 30.0)
+	frames.set_animation_loop("typhoon", false)
+	
+	for i in range(31):
+		var num_str := "%04d" % i
+		var path := "res://asset/fanfx2_wind_spell_large_white/frame" + num_str + ".png"
+		var tex := load(path) as Texture2D
+		if tex != null:
+			frames.add_frame("typhoon", tex)
+			
+	_frames_cache["typhoon"] = frames
+	return frames
+
+
+
+
 

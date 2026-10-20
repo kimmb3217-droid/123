@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://wind_typhoon_scene_01"]
+
+[ext_resource type="Script" path="res://scripts/wind_typhoon.gd" id="1_typhoon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_default"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"typhoon",
+"speed": 5.0
+}]
+
+[node name="WindTyphoon" type="Node2D"]
+script = ExtResource("1_typhoon")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_default")
+animation = &"typhoon"

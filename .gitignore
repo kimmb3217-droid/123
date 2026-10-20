@@ -1,0 +1,11 @@
+# OS / Temporary
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Large raw asset packs & archives
+*.zip
+*.rar
+*.7z
+Super Pixel Effects Gigapack*/
+Super Pixel Fantasy FX Pack*/

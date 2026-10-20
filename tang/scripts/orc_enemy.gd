@@ -16,6 +16,7 @@ var knockback: Vector2 = Vector2.ZERO
 
 var is_attacking: bool = false
 var attack_cooldown_timer: float = 0.0
+var stun_timer: float = 0.0
 const ATTACK_RANGE: float = 38.0
 const ATTACK_COOLDOWN: float = 1.0
 
@@ -44,6 +45,7 @@ func setup_stats(hp_mult: float = 1.0, speed_mult: float = 1.0) -> void:
 	is_dead = false
 	is_attacking = false
 	attack_cooldown_timer = 0.0
+	stun_timer = 0.0
 	knockback = Vector2.ZERO
 	animated_sprite.modulate = Color(1, 1, 1, 1)
 	animated_sprite.play("walk")
@@ -53,9 +55,25 @@ func setup_stats(hp_mult: float = 1.0, speed_mult: float = 1.0) -> void:
 			player = players[0] as Node2D
 	PoolManager.register_enemy(self)
 
+func apply_stun(duration: float) -> void:
+	if is_dead:
+		return
+	stun_timer = max(stun_timer, duration)
+	is_attacking = false
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+		
+	knockback = knockback.move_toward(Vector2.ZERO, 350.0 * delta)
+	
+	if stun_timer > 0.0:
+		stun_timer -= delta
+		global_position += knockback * delta
+		animated_sprite.modulate = Color(0.65, 0.9, 1.2, 1.0)
+		return
+	elif animated_sprite.modulate != Color(1, 1, 1, 1):
+		animated_sprite.modulate = Color(1, 1, 1, 1)
 		
 	if attack_cooldown_timer > 0.0:
 		attack_cooldown_timer -= delta
@@ -72,8 +90,6 @@ func _physics_process(delta: float) -> void:
 	
 	if abs(to_player.x) > 0.05 and not is_attacking:
 		animated_sprite.flip_h = (to_player.x < 0)
-		
-	knockback = knockback.move_toward(Vector2.ZERO, 350.0 * delta)
 	
 	# 공격 판정 (38px -> 38 * 38 = 1444)
 	if dist_sq <= 1444.0 and attack_cooldown_timer <= 0.0 and not is_attacking:

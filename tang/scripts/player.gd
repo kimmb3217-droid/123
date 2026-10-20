@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const SpriteHelperScript = preload("res://scripts/sprite_helper.gd")
 const arrow_scene = preload("res://scenes/arrow.tscn")
+const wind_gust_scene = preload("res://scenes/wind_gust.tscn")
+const wind_typhoon_scene = preload("res://scenes/wind_typhoon.tscn")
 
 signal health_changed(current: float, max_val: float)
 signal exp_changed(current: int, max_val: int, level: int)
@@ -21,6 +23,17 @@ var cooldown_timer: float = 0.0
 var arrow_count: int = 1
 var pierce_count: int = 1
 var magnet_radius: float = 20.0
+
+# 우클릭 특수 공격 (돌풍 및 차징 대폭풍) 관련 변수
+var rmb_pressed_time: float = 0.0
+var rmb_is_down: bool = false
+const RMB_SHORT_CLICK_THRESHOLD: float = 0.28  # 0.28초 미만 클릭 시 짧은 클릭 판정
+const RMB_CHARGE_COMPLETE_TIME: float = 0.85   # 0.85초 이상 모으면 최대 차징
+var gust_cooldown: float = 3.5                 # 3.5초 쿨다운
+var gust_cooldown_timer: float = 0.0
+var typhoon_cooldown: float = 6.0              # 대폭풍 6초 쿨다운
+var typhoon_cooldown_timer: float = 0.0
+var is_charge_ready: bool = false
 
 var auto_attack_enabled: bool = true
 var target_enemy: Node2D = null
@@ -102,6 +115,7 @@ func _handle_movement(_delta: float) -> void:
 
 func _handle_combat(delta: float) -> void:
 	cooldown_timer -= delta
+	_handle_special_attack(delta)
 	
 	target_enemy = _find_nearest_enemy(450.0)
 	
@@ -127,6 +141,90 @@ func _handle_combat(delta: float) -> void:
 	if should_shoot and shoot_dir.length_squared() > 0.01:
 		_shoot(shoot_dir)
 		cooldown_timer = attack_cooldown
+
+func _handle_special_attack(delta: float) -> void:
+	if gust_cooldown_timer > 0.0:
+		gust_cooldown_timer -= delta
+	if typhoon_cooldown_timer > 0.0:
+		typhoon_cooldown_timer -= delta
+
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		rmb_is_down = true
+		rmb_pressed_time += delta
+		
+		# 차징 시각적 피드백 (0.28초 이상 누르고 있을 때부터 기 모으기 시작)
+		if rmb_pressed_time >= RMB_SHORT_CLICK_THRESHOLD:
+			if typhoon_cooldown_timer <= 0.0:
+				if rmb_pressed_time >= RMB_CHARGE_COMPLETE_TIME:
+					# 풀차징 완료 시 금빛/청록빛으로 강하게 발광
+					animated_sprite.modulate = Color(1.5, 2.3, 3.0, 1.0)
+				else:
+					# 차징 중 깜빡임/파동
+					var pulse := 1.0 + sin(rmb_pressed_time * 24.0) * 0.4
+					animated_sprite.modulate = Color(pulse, pulse * 1.3, pulse * 1.8, 1.0)
+	else:
+		if rmb_is_down:
+			# 버튼을 뗐을 때 일반 색상 복구
+			if not is_invulnerable:
+				animated_sprite.modulate = Color(1, 1, 1, 1)
+				
+			if rmb_pressed_time < RMB_SHORT_CLICK_THRESHOLD:
+				# [짧게 클릭]: 전방 돌풍
+				if gust_cooldown_timer <= 0.0:
+					_execute_wind_gust()
+			else:
+				# [길게 차징 클릭]: 360도 대폭풍 (풀차징 완료 시)
+				if rmb_pressed_time >= RMB_CHARGE_COMPLETE_TIME:
+					if typhoon_cooldown_timer <= 0.0:
+						_execute_wind_typhoon()
+				else:
+					# 차징을 채우지 못하고 도중에 뗐을 때 (일반 돌풍 발동 또는 취소)
+					if gust_cooldown_timer <= 0.0:
+						_execute_wind_gust()
+						
+			rmb_is_down = false
+			rmb_pressed_time = 0.0
+
+func _execute_wind_gust() -> void:
+	gust_cooldown_timer = gust_cooldown
+	
+	var aim_dir: Vector2 = (get_global_mouse_position() - global_position).normalized()
+	if aim_dir.length_squared() < 0.01:
+		aim_dir = Vector2.RIGHT if not animated_sprite.flip_h else Vector2.LEFT
+		
+	# 캐릭터 시선 방향도 돌풍 방향에 맞춰 정렬
+	animated_sprite.flip_h = (aim_dir.x < 0)
+	
+	# 돌풍 인스턴스 생성 및 배치
+	var gust_node: Node2D = wind_gust_scene.instantiate() as Node2D
+	get_parent().add_child(gust_node)
+	
+	# 기본 데미지 25 (플레이어 데미지 배율 적용), 적당한 넉백 320, 기절 1.3초, 전방 사거리 160px
+	var gust_dmg: float = 25.0 * damage_multiplier
+	gust_node.call("setup", global_position, aim_dir, gust_dmg, 320.0, 1.3, 160.0)
+	
+	# 플레이어 살짝 번쩍임 피드백
+	var tween := create_tween()
+	animated_sprite.modulate = Color(1.8, 2.2, 2.5)
+	tween.tween_property(animated_sprite, "modulate", Color(1, 1, 1), 0.15)
+
+func _execute_wind_typhoon() -> void:
+	typhoon_cooldown_timer = typhoon_cooldown
+	# 짧은 쿨다운도 함께 적용하여 동시 연속 발사 방지
+	gust_cooldown_timer = max(gust_cooldown_timer, 1.5)
+	
+	# 360도 거대 회오리 인스턴스 생성 및 배치
+	var typhoon_node: Node2D = wind_typhoon_scene.instantiate() as Node2D
+	get_parent().add_child(typhoon_node)
+	
+	# 데미지 65 (2.6배 위력), 넉백 520, 기절 2.6초(2배 지속), 전방위 360도 반경 210px
+	var typhoon_dmg: float = 65.0 * damage_multiplier
+	typhoon_node.call("setup", global_position, typhoon_dmg, 520.0, 2.6, 210.0)
+	
+	# 강력한 시각/충격 피드백 (플레이어 플래시)
+	var tween := create_tween()
+	animated_sprite.modulate = Color(3.0, 3.0, 3.5)
+	tween.tween_property(animated_sprite, "modulate", Color(1, 1, 1), 0.25)
 
 func _shoot(base_dir: Vector2) -> void:
 	animated_sprite.play("attack")

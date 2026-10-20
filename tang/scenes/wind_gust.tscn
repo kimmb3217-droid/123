@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://wind_gust_scene_01"]
+
+[ext_resource type="Script" path="res://scripts/wind_gust.gd" id="1_gust"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_default"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"gust",
+"speed": 5.0
+}]
+
+[node name="WindGust" type="Node2D"]
+script = ExtResource("1_gust")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_default")
+animation = &"gust"
