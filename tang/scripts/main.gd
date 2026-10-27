@@ -64,6 +64,84 @@ func _get_active_orc_rider_count() -> int:
 			count += 1
 	return count
 
+# 시간대별 가중치 테이블(Weighted Table) 데이터
+# 0~1분: 박쥐 전용 (60초까지 오크/늑대/장군 미등장)
+# 1분(60초): 오크 등장 시작
+# 2분(120초): 늑대 등장 시작
+# 3분(180초): 오크 장군 등장 시작
+const SPAWN_TIMELINE: Array[Dictionary] = [
+	{
+		"time": 0.0,
+		"weights": { "bat_enemy": 100.0, "orc_enemy": 0.0, "werewolf_enemy": 0.0, "orc_rider_enemy": 0.0 }
+	},
+	{
+		"time": 60.0, # 1분: 오크 등장 시작 직전 (여기까지는 박쥐 100%)
+		"weights": { "bat_enemy": 100.0, "orc_enemy": 0.0, "werewolf_enemy": 0.0, "orc_rider_enemy": 0.0 }
+	},
+	{
+		"time": 120.0, # 2분: 오크 비중 상승 및 늑대 등장 시작 직전
+		"weights": { "bat_enemy": 65.0, "orc_enemy": 35.0, "werewolf_enemy": 0.0, "orc_rider_enemy": 0.0 }
+	},
+	{
+		"time": 180.0, # 3분: 늑대 활성화 및 오크 장군 등장 시작 직전
+		"weights": { "bat_enemy": 40.0, "orc_enemy": 40.0, "werewolf_enemy": 20.0, "orc_rider_enemy": 0.0 }
+	},
+	{
+		"time": 300.0, # 5분: 오크 장군/늑대 안착
+		"weights": { "bat_enemy": 20.0, "orc_enemy": 35.0, "werewolf_enemy": 35.0, "orc_rider_enemy": 10.0 }
+	},
+	{
+		"time": 480.0, # 8분 이후: 후반부 고난도 구성
+		"weights": { "bat_enemy": 10.0, "orc_enemy": 30.0, "werewolf_enemy": 45.0, "orc_rider_enemy": 15.0 }
+	}
+]
+
+# 시간 경과에 따라 가중치를 부드럽게 선형 보간(Lerp)하여 단절 없는 스폰 구현
+func _get_current_spawn_weights() -> Dictionary:
+	var result: Dictionary = { "bat_enemy": 100.0, "orc_enemy": 0.0, "werewolf_enemy": 0.0, "orc_rider_enemy": 0.0 }
+	
+	if game_time <= SPAWN_TIMELINE[0]["time"]:
+		return SPAWN_TIMELINE[0]["weights"].duplicate()
+		
+	var last_idx: int = SPAWN_TIMELINE.size() - 1
+	if game_time >= SPAWN_TIMELINE[last_idx]["time"]:
+		result = SPAWN_TIMELINE[last_idx]["weights"].duplicate()
+	else:
+		for i in range(last_idx):
+			var cur_point = SPAWN_TIMELINE[i]
+			var next_point = SPAWN_TIMELINE[i + 1]
+			if game_time >= cur_point["time"] and game_time < next_point["time"]:
+				var t: float = (game_time - cur_point["time"]) / (next_point["time"] - cur_point["time"])
+				for key in cur_point["weights"].keys():
+					var w_start: float = float(cur_point["weights"][key])
+					var w_end: float = float(next_point["weights"][key])
+					result[key] = lerpf(w_start, w_end, t)
+				break
+
+	# 오크 라이더 필드 상한(최대 4마리) 안전장치
+	if _get_active_orc_rider_count() >= 4:
+		result["orc_rider_enemy"] = 0.0
+		
+	return result
+
+func _select_enemy_by_weight() -> String:
+	var weights: Dictionary = _get_current_spawn_weights()
+	var total_weight: float = 0.0
+	for w in weights.values():
+		total_weight += float(w)
+		
+	if total_weight <= 0.0:
+		return "bat_enemy"
+		
+	var roll: float = randf() * total_weight
+	var cumulative: float = 0.0
+	for enemy_name in weights.keys():
+		cumulative += float(weights[enemy_name])
+		if roll <= cumulative:
+			return enemy_name
+			
+	return "bat_enemy"
+
 func _spawn_enemy() -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
 		return
@@ -72,25 +150,16 @@ func _spawn_enemy() -> void:
 	var spawn_dist: float = randf_range(420.0, 520.0)
 	var spawn_pos: Vector2 = player.global_position + Vector2.RIGHT.rotated(angle) * spawn_dist
 	
-	var p_level: int = int(player.get("level"))
-	var active_riders: int = _get_active_orc_rider_count()
+	var enemy_type: String = _select_enemy_by_weight()
 	
-	var enemy_type: String = "bat_enemy"
-	
-	# 10레벨 이상일 때: 기본 평소 스폰에 오크 라이더 등장 (필드 최대 3마리 제한)
-	if p_level >= 10 and active_riders < 3 and randf() < 0.25:
-		enemy_type = "orc_rider_enemy"
-	elif game_time >= 300.0 and randf() < clamp(0.25 + (game_time - 300.0) / 120.0 * 0.25, 0.25, 0.5):
-		# 게임 시작 5분(300초) 이후부터 늑대인간(Werewolf) 출현 (25% ~ 최대 50%)
-		enemy_type = "werewolf_enemy"
-	else:
-		# 게임 시작 15초 후부터 오크 등장 확률 점진적 증가 (최대 50%)
-		var orc_chance: float = clamp((game_time - 15.0) / 60.0 * 0.45, 0.0, 0.5)
-		enemy_type = "orc_enemy" if (randf() < orc_chance) else "bat_enemy"
+	# 시간 경과에 따른 완만한 스탯 배율 (HP: 분당 10% 증가, 속도: 분당 2% 증가 - 최대 25% 상한)
+	var minutes: float = game_time / 60.0
+	var hp_mult: float = 1.0 + (minutes * 0.10)
+	var speed_mult: float = clamp(1.0 + (minutes * 0.02), 1.0, 1.25)
 	
 	var enemy: Node2D = PoolManager.spawn(enemy_type, self) as Node2D
 	enemy.global_position = spawn_pos
-	enemy.call("setup_stats", 1.0, 1.0)
+	enemy.call("setup_stats", hp_mult, speed_mult)
 
 func _trigger_swarm_rush(_count: int) -> void:
 	if not is_instance_valid(player) or bool(player.get("is_dead")):
@@ -116,13 +185,14 @@ func _trigger_swarm_rush(_count: int) -> void:
 			var minion_pos: Vector2 = rider_pos + Vector2.RIGHT.rotated(offset_angle) * offset_dist
 			
 			var minion_type: String = "bat_enemy"
-			if game_time >= 300.0:
-				# 5분 이후 웨이브: 늑대인간과 오크가 섞여서 출현
+			if game_time >= 120.0:
+				# 2분 이후 웨이브: 늑대인간과 오크 섞임
 				if m_idx % 4 == 0:
 					minion_type = "werewolf_enemy"
 				elif m_idx % 4 == 2:
 					minion_type = "orc_enemy"
-			else:
+			elif game_time >= 60.0:
+				# 1분 이후 웨이브: 오크 섞임
 				minion_type = "orc_enemy" if (m_idx % 4 == 0) else "bat_enemy"
 			var minion: Node2D = PoolManager.spawn(minion_type, self) as Node2D
 			minion.global_position = minion_pos
