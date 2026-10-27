@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://b1skilltree001"]
+
+[ext_resource type="Script" path="res://scripts/skill_tree_modal.gd" id="1_script"]
+
+[node name="SkillTreeModal" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="BgOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.08, 0.94)
+
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 18.0
+offset_right = 260.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 26
+text = "🌳 스킬 트리 (SKILL TREE)"
+
+[node name="PointsLabel" type="Label" parent="Header"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 18.0
+offset_right = 160.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+text = "보유 스킬 포인트: 0"
+horizontal_alignment = 1
+
+[node name="CloseBtn" type="Button" parent="Header"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "닫기 (TAB)"
+
+[node name="BranchGuides" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AttackLabel" type="Label" parent="BranchGuides"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 10.0
+offset_right = 450.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.3, 0.9, 0.45, 1)
+theme_override_font_sizes/font_size = 18
+text = "◀ 탄환 / 공격"
+
+[node name="MobilityLabel" type="Label" parent="BranchGuides"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "▲ 이동성"
+horizontal_alignment = 1
+
+[node name="SurvivalLabel" type="Label" parent="BranchGuides"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -450.0
+offset_top = 10.0
+offset_right = -310.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "생존 / 활력 ▶"
+horizontal_alignment = 2
+
+[node name="TreeCanvas" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 70.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DescPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -140.0
+offset_right = 290.0
+offset_bottom = 160.0
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="DescPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 244.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "스킬 이름"
+
+[node name="Level" type="Label" parent="DescPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 46.0
+offset_right = 244.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.7, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "현재 레벨: 0 / 5"
+
+[node name="Body" type="Label" parent="DescPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 244.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 14
+text = "스킬 설명 내용이 여기에 표시됩니다."
+autowrap_mode = 2
+
+[node name="UpgradeBtn" type="Button" parent="DescPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -54.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "강화하기 (1pt)"

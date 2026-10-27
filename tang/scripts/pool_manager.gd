@@ -8,6 +8,7 @@ static var pools: Dictionary = {
 	"orc_rider_enemy": [],
 	"werewolf_enemy": [],
 	"exp_gem": [],
+	"heal_item": [],
 	"damage_number": []
 }
 
@@ -17,7 +18,8 @@ static var scenes: Dictionary = {
 	"orc_enemy": "res://scenes/orc_enemy.tscn",
 	"orc_rider_enemy": "res://scenes/orc_rider_enemy.tscn",
 	"werewolf_enemy": "res://scenes/werewolf_enemy.tscn",
-	"exp_gem": "res://scenes/exp_gem.tscn"
+	"exp_gem": "res://scenes/exp_gem.tscn",
+	"heal_item": "res://scenes/heal_item.tscn"
 }
 static var loaded_scenes: Dictionary = {}
 
@@ -32,6 +34,7 @@ static func clear_all() -> void:
 		"orc_rider_enemy": [],
 		"werewolf_enemy": [],
 		"exp_gem": [],
+		"heal_item": [],
 		"damage_number": []
 	}
 	active_enemies.clear()

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b1healitem001"]
+
+[ext_resource type="Script" path="res://scripts/heal_item.gd" id="1_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="HealItem" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="BgCircle" type="Polygon2D" parent="Visual"]
+color = Color(0.15, 0.75, 0.35, 0.75)
+polygon = PackedVector2Array(0, -14, 10, -10, 14, 0, 10, 10, 0, 14, -10, 10, -14, 0, -10, -10)
+
+[node name="CrossV" type="ColorRect" parent="Visual"]
+offset_left = -3.0
+offset_top = -9.0
+offset_right = 3.0
+offset_bottom = 9.0
+color = Color(1, 1, 1, 1)
+
+[node name="CrossH" type="ColorRect" parent="Visual"]
+offset_left = -9.0
+offset_top = -3.0
+offset_right = 9.0
+offset_bottom = 3.0
+color = Color(1, 1, 1, 1)

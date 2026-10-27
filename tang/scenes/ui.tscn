@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1ui001"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/skill_tree_modal.tscn" id="2_skilltree"]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -32,6 +33,15 @@ offset_right = 90.0
 offset_bottom = 54.0
 theme_override_font_sizes/font_size = 18
 text = "Lv. 1"
+
+[node name="SkillTreeBtn" type="Button" parent="TopContainer"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 14
+text = "🌳 스킬 트리 [TAB]"
 
 [node name="TimeLabel" type="Label" parent="TopContainer"]
 layout_mode = 1
@@ -202,3 +212,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 22
 text = "다시 시작"
+
+[node name="SkillTreeModal" parent="." instance=ExtResource("2_skilltree")]
+visible = false

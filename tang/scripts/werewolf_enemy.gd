@@ -170,6 +170,9 @@ func die() -> void:
 		player.add_kill()
 		
 	call_deferred("_spawn_exp_gem", global_position)
+	# 12% 확률로 힐 아이템 드랍
+	if randf() < 0.12:
+		call_deferred("_spawn_heal_item", global_position)
 	
 	if animated_sprite.sprite_frames.has_animation("death"):
 		animated_sprite.play("death")
@@ -188,3 +191,9 @@ func _spawn_exp_gem(pos: Vector2) -> void:
 	if gem != null:
 		gem.global_position = pos
 		gem.call("setup", 5)
+
+func _spawn_heal_item(pos: Vector2) -> void:
+	var item: Node2D = PoolManager.spawn("heal_item", get_parent()) as Node2D
+	if item != null:
+		item.global_position = pos
+		item.call("setup", 45.0)

@@ -10,6 +10,7 @@ signal exp_changed(current: int, max_val: int, level: int)
 signal control_mode_changed(mode_name: String)
 signal auto_attack_toggled(enabled: bool)
 signal level_up_triggered(level: int)
+signal skill_points_changed(points: int)
 signal kill_count_changed(kills: int)
 signal player_died()
 
@@ -54,6 +55,7 @@ var auto_move_timer: float = 0.0
 var level: int = 1
 var current_exp: int = 0
 var exp_to_next: int = 5
+var skill_points: int = 0
 var kill_count: int = 0
 
 var is_invulnerable: bool = false
@@ -420,8 +422,10 @@ func add_exp(amount: int) -> void:
 	if current_exp >= exp_to_next:
 		current_exp -= exp_to_next
 		level += 1
+		skill_points += 1
 		exp_to_next = int(float(exp_to_next) * 1.5) + 3
 		emit_signal("level_up_triggered", level)
+		emit_signal("skill_points_changed", skill_points)
 		
 	emit_signal("exp_changed", current_exp, exp_to_next, level)
 
@@ -431,21 +435,42 @@ func add_kill() -> void:
 
 func apply_upgrade(upgrade_id: String) -> void:
 	match upgrade_id:
+		# [기동성 Branch]
+		"move_speed":
+			speed += 18.0
+		"dash_cooldown":
+			gust_cooldown = max(1.5, gust_cooldown * 0.85)
+		"dash_mastery":
+			speed += 25.0
+			gust_cooldown = max(1.2, gust_cooldown * 0.8)
+			
+		# [화살/공격 Branch]
+		"damage":
+			damage_multiplier += 0.20
+		"attack_speed":
+			attack_cooldown = max(0.12, attack_cooldown * 0.82)
 		"arrow_count":
 			arrow_count += 1
-		"attack_speed":
-			attack_cooldown = max(0.12, attack_cooldown * 0.8)
-		"damage":
-			damage_multiplier += 0.25
 		"pierce":
 			pierce_count += 1
-		"speed":
-			speed += 22.0
+		"storm_mastery":
+			damage_multiplier += 0.35
+			typhoon_cooldown = max(3.0, typhoon_cooldown * 0.75)
+			
+		# [생존 Branch]
+		"max_hp":
+			max_hp += 30.0
+			heal(30.0)
 		"magnet":
-			magnet_radius += 30.0
-		"heal_hp":
-			max_hp += 25.0
-			heal(40.0)
+			magnet_radius += 35.0
+		"heal_potency":
+			heal(50.0)
+			magnet_radius += 20.0
+		"immortal_vitality":
+			max_hp += 60.0
+			heal(max_hp)
+		_:
+			pass
 
 func heal(amount: float) -> void:
 	if is_dead:

@@ -11,6 +11,8 @@ signal restart_requested()
 @onready var hp_bar: ProgressBar = $TopContainer/HpBar
 @onready var hp_label: Label = $TopContainer/HpBar/HpLabel
 @onready var auto_attack_btn: Button = $AutoAttackBadge
+@onready var skill_tree_btn: Button = $TopContainer/SkillTreeBtn
+@onready var skill_tree_modal: SkillTreeModal = $SkillTreeModal
 
 @onready var level_up_modal: Control = $LevelUpModal
 @onready var cards_container: HBoxContainer = $LevelUpModal/CardsContainer
@@ -66,7 +68,30 @@ func _ready() -> void:
 	level_up_modal.visible = false
 	game_over_modal.visible = false
 	auto_attack_btn.pressed.connect(_on_auto_attack_pressed)
+	if skill_tree_btn != null:
+		skill_tree_btn.pressed.connect(toggle_skill_tree)
 	$GameOverModal/RestartBtn.pressed.connect(func(): emit_signal("restart_requested"))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_TAB or event.physical_keycode == KEY_TAB:
+			toggle_skill_tree()
+			get_viewport().set_input_as_handled()
+
+func toggle_skill_tree() -> void:
+	if skill_tree_modal.visible:
+		skill_tree_modal.close_tree()
+	else:
+		skill_tree_modal.open_tree()
+
+func update_skill_points(points: int) -> void:
+	if skill_tree_btn != null:
+		if points > 0:
+			skill_tree_btn.text = "🌳 스킬 트리 [TAB] (UP! %d)" % points
+			skill_tree_btn.modulate = Color(1.3, 1.2, 0.4)
+		else:
+			skill_tree_btn.text = "🌳 스킬 트리 [TAB]"
+			skill_tree_btn.modulate = Color(1, 1, 1)
 
 func _on_auto_attack_pressed() -> void:
 	var players = get_tree().get_nodes_in_group("player")
@@ -110,21 +135,9 @@ func update_auto_attack(is_enabled: bool) -> void:
 	pass
 
 func show_level_up() -> void:
-	get_tree().paused = true
-	level_up_modal.visible = true
-	
-	# Clear old card buttons
-	for child in cards_container.get_children():
-		child.queue_free()
-		
-	# Pick 3 random upgrades
-	var shuffled := all_upgrades.duplicate()
-	shuffled.shuffle()
-	var selected := shuffled.slice(0, 3)
-	
-	for upg in selected:
-		var card := _create_upgrade_card(upg)
-		cards_container.add_child(card)
+	# 이제 랜덤 3선 카드 대신 TAB 키 스킬 트리 방식으로 전환되었으므로 팝업은 띄우지 않습니다.
+	# 대신 스킬 트리 버튼 알림이 갱신됩니다.
+	pass
 
 func _create_upgrade_card(upg: Dictionary) -> Button:
 	var btn := Button.new()
