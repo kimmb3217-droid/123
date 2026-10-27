@@ -12,7 +12,7 @@ signal restart_requested()
 @onready var hp_label: Label = $TopContainer/HpBar/HpLabel
 @onready var auto_attack_btn: Button = $AutoAttackBadge
 @onready var skill_tree_btn: Button = $TopContainer/SkillTreeBtn
-@onready var skill_tree_modal: SkillTreeModal = $SkillTreeModal
+@onready var skill_tree_modal: Control = $SkillTreeModal
 
 @onready var level_up_modal: Control = $LevelUpModal
 @onready var cards_container: HBoxContainer = $LevelUpModal/CardsContainer
