@@ -217,6 +217,56 @@ static func get_orc_rider_frames() -> SpriteFrames:
 	_frames_cache["orc_rider"] = f
 	return f
 
+static func get_werewolf_frames() -> SpriteFrames:
+	if _frames_cache.has("werewolf"):
+		return _frames_cache["werewolf"]
+	var f := create_sprite_frames([
+		{
+			"name": "idle",
+			"path": "res://asset/character01/character01/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf_Idle.png",
+			"count": 6,
+			"fps": 8.0,
+			"loop": true
+		},
+		{
+			"name": "walk",
+			"path": "res://asset/character01/character01/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf_Walk.png",
+			"count": 8,
+			"fps": 12.0,
+			"loop": true
+		},
+		{
+			"name": "attack",
+			"path": "res://asset/character01/character01/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf_Attack01.png",
+			"count": 9,
+			"fps": 14.0,
+			"loop": false
+		},
+		{
+			"name": "attack02",
+			"path": "res://asset/character01/character01/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf_Attack02.png",
+			"count": 13,
+			"fps": 16.0,
+			"loop": false
+		},
+		{
+			"name": "hurt",
+			"path": "res://asset/character01/character01/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf_Hurt.png",
+			"count": 4,
+			"fps": 10.0,
+			"loop": false
+		},
+		{
+			"name": "death",
+			"path": "res://asset/character01/character01/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf_Death.png",
+			"count": 4,
+			"fps": 8.0,
+			"loop": false
+		}
+	])
+	_frames_cache["werewolf"] = f
+	return f
+
 static func get_wind_gust_frames() -> SpriteFrames:
 	if _frames_cache.has("wind_gust"):
 		return _frames_cache["wind_gust"]

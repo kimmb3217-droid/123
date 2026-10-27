@@ -80,6 +80,9 @@ func _spawn_enemy() -> void:
 	# 10레벨 이상일 때: 기본 평소 스폰에 오크 라이더 등장 (필드 최대 3마리 제한)
 	if p_level >= 10 and active_riders < 3 and randf() < 0.25:
 		enemy_type = "orc_rider_enemy"
+	elif game_time >= 300.0 and randf() < clamp(0.25 + (game_time - 300.0) / 120.0 * 0.25, 0.25, 0.5):
+		# 게임 시작 5분(300초) 이후부터 늑대인간(Werewolf) 출현 (25% ~ 최대 50%)
+		enemy_type = "werewolf_enemy"
 	else:
 		# 게임 시작 15초 후부터 오크 등장 확률 점진적 증가 (최대 50%)
 		var orc_chance: float = clamp((game_time - 15.0) / 60.0 * 0.45, 0.0, 0.5)
@@ -112,7 +115,15 @@ func _trigger_swarm_rush(_count: int) -> void:
 			var offset_dist: float = randf_range(15.0, 75.0)
 			var minion_pos: Vector2 = rider_pos + Vector2.RIGHT.rotated(offset_angle) * offset_dist
 			
-			var minion_type: String = "orc_enemy" if (m_idx % 4 == 0) else "bat_enemy"
+			var minion_type: String = "bat_enemy"
+			if game_time >= 300.0:
+				# 5분 이후 웨이브: 늑대인간과 오크가 섞여서 출현
+				if m_idx % 4 == 0:
+					minion_type = "werewolf_enemy"
+				elif m_idx % 4 == 2:
+					minion_type = "orc_enemy"
+			else:
+				minion_type = "orc_enemy" if (m_idx % 4 == 0) else "bat_enemy"
 			var minion: Node2D = PoolManager.spawn(minion_type, self) as Node2D
 			minion.global_position = minion_pos
 			minion.call("setup_stats", 1.0, 1.0)
